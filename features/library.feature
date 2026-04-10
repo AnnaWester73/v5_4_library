@@ -2,33 +2,33 @@ Feature: Bibliotek
 
   Scenario: Söka efter böcker baserat på titel
     Given att biblioteket innehåller följande böcker:
-      | titel               |author             | borrowed    |
+      | title               |author             | borrowed    |
       | Pippi Långstrump    |Astrid Lindgren    | no          |
       | Emil i Lönneberga   |Astrid Lindgren    | no          |
       | Madicken            |Astrid Lindgren    | no          |
 
     When användaren söker efter böcker med titel "Pippi Långstrump"
     Then ska följande böcker hittas:
-      | titel               |
+      | title               |
       | Pippi Långstrump    |
 
   Scenario: Söka efter böcker baserat på författare
     Given att biblioteket innehåller följande böcker:
-      | titel               |author             | borrowed    |
+      | title               |author             | borrowed    |
       | Pippi Långstrump    |Astrid Lindgren    | no          |
       | Emil i Lönneberga   |Astrid Lindgren    | no          |
       | Madicken            |Astrid Lindgren    | no          |
 
     When användaren söker efter böcker av författaren "Astrid Lindgren"
     Then ska följande böcker hittas:
-      | titel              |
+      | title              |
       | Pippi Långstrump   |
       | Emil i Lönneberga  |
       | Madicken           |
 
   Scenario: Användaren lånar en tillgänglig bok
     Given att biblioteket innehåller följande böcker:
-      | titel               |author             | borrowed    |
+      | title               |author             | borrowed    |
       | Pippi Långstrump    |Astrid Lindgren    | no          |
       | Emil i Lönneberga   |Astrid Lindgren    | no          |
       | Madicken            |Astrid Lindgren    | no          |
@@ -37,7 +37,7 @@ Feature: Bibliotek
 
   Scenario: Användaren lämnar tillbaka en utlånad bok
     Given att biblioteket innehåller följande böcker:
-      | titel               |author             | borrowed    |
+      | title               |author             | borrowed    |
       | Pippi Långstrump    |Astrid Lindgren    | yes         |
       | Emil i Lönneberga   |Astrid Lindgren    | no          |
       | Madicken            |Astrid Lindgren    | no          |
@@ -46,7 +46,7 @@ Feature: Bibliotek
 
   Scenario: Kontrollera om en viss bok inte är utlånad
     Given att biblioteket innehåller följande böcker:
-      | titel               |author             | borrowed    |
+      | title               |author             | borrowed    |
       | Pippi Långstrump    |Astrid Lindgren    | no          |
       | Emil i Lönneberga   |Astrid Lindgren    | no          |
       | Madicken            |Astrid Lindgren    | no          |
