@@ -1,4 +1,5 @@
 from behave import given, when, then
+from src.library import Library
 
 
 @given('att biblioteket innehåller följande böcker:')
@@ -13,43 +14,31 @@ def create_books_in_library(context):
         }
         context.books.append(book)
 
+    context.library = Library()
+    context.library.add_books(context.books)
+
 
 @when('användaren söker efter böcker med titel "{title}"')
 def search_books_with_title(context, title):
-    context.results = []
+    context.results = context.library.search_by_title(title)
 
-    for book in context.books:
-        if book["title"] == title:
-            context.results.append(book)
 
 @when('användaren söker efter böcker av författaren "{author}"')
 def search_books_by_author(context, author):
-    context.results = []
-
-    for book in context.books:
-        if book["author"] == author:
-            context.results.append(book)
+    context.results = context.library.search_by_author(author)
 
 @when('användaren lånar boken "{title}"')
 def borrow_book(context, title):
-    for book in context.books:
-        if book["title"] == title:
-            book["borrowed"] = True
-            return
+    context.library.borrow_book(title)
 
 @when('användaren lämnar tillbaka boken "{title}"')
 def return_book(context, title):
-    for book in context.books:
-        if book["title"] == title:
-            book["borrowed"] = False
-            return
+    context.library.return_book(title)
+
 
 @when('användaren kontrollerar om boken "{title}" är utlånad')
 def check_if_book_is_borrowed(context, title):
-    for book in context.books:
-        if book["title"] == title:
-            context.borrowed_status = book["borrowed"]
-            return
+    context.borrowed_status = context.library.is_book_borrowed(title)
 
 
 @then('ska följande böcker hittas:')
@@ -61,17 +50,13 @@ def books_have_been_found(context):
 
 @then('ska boken "{title}" vara utlånad')
 def book_should_be_borrowed(context, title):
-    for book in context.books:
-        if book["title"] == title:
-            assert book["borrowed"] is True, f'Book "{title}" should be borrowed'
-            return
+    borrowed_status = context.library.is_book_borrowed(title)
+    assert borrowed_status is True, f'Book "{title}" should not be borrowed'
 
 @then('ska boken "{title}" inte vara utlånad')
 def book_should_not_be_borrowed(context, title):
-    for book in context.books:
-        if book["title"] == title:
-            assert book["borrowed"] is False, f'Book "{title}" should not be borrowed'
-            return
+    borrowed_status = context.library.is_book_borrowed(title)
+    assert borrowed_status is False, f'Book "{title}" should not be borrowed'
 
 @then('ska svaret vara att boken är utlånad')
 def answer_should_be_that_book_is_borrowed(context):
