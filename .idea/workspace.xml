@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b3ea74ba-67a2-40bd-b4a8-ec937d3a24a7" name="Changes" comment="Commit with library_steps.py for search for title and library contains in library">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="b3ea74ba-67a2-40bd-b4a8-ec937d3a24a7" name="Changes" comment="Commit with library_steps.py for borrow a book">
       <change beforePath="$PROJECT_DIR$/features/steps/library_steps.py" beforeDir="false" afterPath="$PROJECT_DIR$/features/steps/library_steps.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -88,13 +87,22 @@
       <option name="project" value="LOCAL" />
       <updated>1775849660445</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Commit with library_steps.py for borrow a book">
+      <option name="closed" value="true" />
+      <created>1775850962735</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1775850962735</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Commit with project structure and scenarios in library.feature" />
     <MESSAGE value="Commit with fixes scenarios in library.feature with the right indentations" />
     <MESSAGE value="Commit with library_steps.py for search for title and library contains in library" />
-    <option name="LAST_COMMIT_MESSAGE" value="Commit with library_steps.py for search for title and library contains in library" />
+    <MESSAGE value="Commit with library_steps.py for borrow a book" />
+    <option name="LAST_COMMIT_MESSAGE" value="Commit with library_steps.py for borrow a book" />
   </component>
 </project>
