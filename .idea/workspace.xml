@@ -1,13 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b3ea74ba-67a2-40bd-b4a8-ec937d3a24a7" name="Changes" comment="Commit with BDD scenario in libray.py. Change steps to work with code">
-      <change afterPath="$PROJECT_DIR$/src/book.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/features/steps/library_steps.py" beforeDir="false" afterPath="$PROJECT_DIR$/features/steps/library_steps.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/books.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/library.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/library.py" afterDir="false" />
-    </list>
+    <list default="true" id="b3ea74ba-67a2-40bd-b4a8-ec937d3a24a7" name="Changes" comment="Commit with a book class and update library.py to use the book class. Fixes in library_steps.py with incorrect information." />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -123,7 +117,15 @@
       <option name="project" value="LOCAL" />
       <updated>1775853017318</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Commit with a book class and update library.py to use the book class. Fixes in library_steps.py with incorrect information.">
+      <option name="closed" value="true" />
+      <created>1775856128936</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1775856128936</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -134,6 +136,7 @@
     <MESSAGE value="Commit with library_steps.py for return a book" />
     <MESSAGE value="Commit with library_steps.py for if book is borrowed or not" />
     <MESSAGE value="Commit with BDD scenario in libray.py. Change steps to work with code" />
-    <option name="LAST_COMMIT_MESSAGE" value="Commit with BDD scenario in libray.py. Change steps to work with code" />
+    <MESSAGE value="Commit with a book class and update library.py to use the book class. Fixes in library_steps.py with incorrect information." />
+    <option name="LAST_COMMIT_MESSAGE" value="Commit with a book class and update library.py to use the book class. Fixes in library_steps.py with incorrect information." />
   </component>
 </project>
