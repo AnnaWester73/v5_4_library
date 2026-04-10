@@ -44,6 +44,13 @@ def return_book(context, title):
             book["borrowed"] = False
             return
 
+@when('användaren kontrollerar om boken "{title}" är utlånad')
+def check_if_book_is_borrowed(context, title):
+    for book in context.books:
+        if book["title"] == title:
+            context.borrowed_status = book["borrowed"]
+            return
+
 
 @then('ska följande böcker hittas:')
 def books_have_been_found(context):
@@ -65,3 +72,12 @@ def book_should_not_be_borrowed(context, title):
         if book["title"] == title:
             assert book["borrowed"] is False, f'Book "{title}" should not be borrowed'
             return
+
+@then('ska svaret vara att boken är utlånad')
+def answer_should_be_that_book_is_borrowed(context):
+    assert context.borrowed_status is True, "Book should be borrowed"
+
+
+@then('ska svaret vara att boken inte är utlånad')
+def answer_should_be_that_book_is_not_borrowed(context):
+    assert context.borrowed_status is False, "Book should not be borrowed"
