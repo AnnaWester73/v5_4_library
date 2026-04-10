@@ -1,15 +1,17 @@
+from .book import Book
+
 class Library:
     def __init__(self):
         self.books = []
 
     def add_books(self, books):
-        self.books = books
+        self.books = [Book(book["title"], book["author"], book["borrowed"])for book in books]
 
     def search_by_title(self, title):
         results = []
 
         for book in self.books:
-            if book["title"] == title:
+            if book.title == title:
                 results.append(book)
 
         return results
@@ -18,24 +20,24 @@ class Library:
         results = []
 
         for book in self.books:
-            if book["author"] == author:
+            if book.author == author:
                 results.append(book)
 
         return results
 
     def borrow_book(self, title):
         for book in self.books:
-            if book["title"] == title:
-                book["borrowed"] = True
+            if book.title == title:
+                book.borrowed = True
                 return
 
     def return_book(self, title):
         for book in self.books:
-            if book["title"] == title:
-                book["borrowed"] = False
+            if book.title == title:
+                book.borrowed = False
                 return
 
     def is_book_borrowed(self, title):
         for book in self.books:
-            if book["title"] == title:
-                return book["borrowed"]
+            if book.title == title:
+                return book.borrowed

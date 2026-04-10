@@ -44,14 +44,14 @@ def check_if_book_is_borrowed(context, title):
 @then('ska följande böcker hittas:')
 def books_have_been_found(context):
     expected_titles = [row["title"] for row in context.table]
-    actual_titles = [book["title"] for book in context.results]
+    actual_titles = [book.title for book in context.results]
 
     assert expected_titles == actual_titles, f"Expected {expected_titles}, but got {actual_titles}"
 
 @then('ska boken "{title}" vara utlånad')
 def book_should_be_borrowed(context, title):
     borrowed_status = context.library.is_book_borrowed(title)
-    assert borrowed_status is True, f'Book "{title}" should not be borrowed'
+    assert borrowed_status is True, f'Book "{title}" should be borrowed'
 
 @then('ska boken "{title}" inte vara utlånad')
 def book_should_not_be_borrowed(context, title):
